@@ -1,7 +1,12 @@
 Introduction
 ============
 
-Mailinglijst integration for Plone 4 and 5.
+`MailingLijst integration <https://mailinglijst.nl>`_ integration for Plone 4 and 5.
+
+
+Documentation
+=============
+- Based on the `MailChimp integration <https://pypi.python.org/pypi/collective.mailchimp>`_
 
 
 Installation
@@ -22,5 +27,5 @@ and then running "bin/buildout"
 Issue Tracker
 =============
 
-Please report bugs to the `issue tracker on github`_.
+Please use the `Issue-Tracker <https://github.com/intk/collective.mailinglijst/issues>`_
 
