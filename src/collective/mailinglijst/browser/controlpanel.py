@@ -62,7 +62,7 @@ class MailinglijstSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
                 )
             )
 
-    """def available_lists(self):
+    def available_lists(self):
         if IDisableCSRFProtection is not None:
             alsoProvides(self.request, IDisableCSRFProtection)
         mailinglijst = getUtility(IMailinglijstLocator)
@@ -74,4 +74,4 @@ class MailinglijstSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
                     u"Could not fetch available lists from Mailinglijst. " +
                     u"Please check your Mailinglijst API key: %s" % error
                 )
-            )"""
+            )

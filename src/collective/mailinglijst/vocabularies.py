@@ -16,6 +16,8 @@ def available_lists(context):
     )
 
 
+"""
+
 def interest_groups(context):
     mailinglijst = getUtility(IMailinglijstLocator)
     if 'list_id' in context.REQUEST:
@@ -43,8 +45,8 @@ def interest_groups(context):
             value=group['id'].encode("utf-8"),
             title=group['name']
         ) for group in interests
-    ])"""
-
+    ])
+"""
 
 def email_type(context):
     terms = []

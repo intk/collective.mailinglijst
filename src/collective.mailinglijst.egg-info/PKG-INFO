@@ -1,0 +1,70 @@
+Metadata-Version: 1.1
+Name: collective.mailinglijst
+Version: 0.0.1
+Summary: Mailinglijst integration for Plone.
+Home-page: https://pypi.python.org/pypi/collective.mailinglijst
+Author: Andre Goncalves
+Author-email: andre@intk.com
+License: GPL version 2
+Description: Introduction
+        ============
+        
+        Mailinglijst integration for Plone 4 and 5.
+        
+        
+        Installation
+        ============
+        
+        Install collective.mailinglijst by adding it to your buildout:
+        
+          [buildout]
+        
+          ...
+        
+          eggs =
+              collective.mailinglijst
+        
+        and then running "bin/buildout"
+        
+        
+        Issue Tracker
+        =============
+        
+        Please report bugs to the `issue tracker on github`_.
+        
+        
+        Contributors
+        ============
+        
+        - Timo Stollenwerk, Original Author
+        - Maurits van Rees, Mailinglijst API 3, Plone 5 compatibility
+        - Jean-Paul Ladage
+        - Jean-Michel Francois
+        
+        Changelog
+        =========
+        
+        
+        1.0 (2017-03-02)
+        ----------------
+        
+        - Initial release
+          [andreesg]
+        
+        
+Keywords: Python Plone
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Framework :: Plone
+Classifier: Framework :: Plone :: 4.0
+Classifier: Framework :: Plone :: 4.1
+Classifier: Framework :: Plone :: 4.2
+Classifier: Framework :: Plone :: 4.3
+Classifier: Framework :: Plone :: 5.0
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Framework :: Plone
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)

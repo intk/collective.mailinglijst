@@ -212,7 +212,7 @@ class IMailinglijstSettings(Interface):
         if len(data.api_key) == 0:
             return
         parts = data.api_key.split('-')
-        if len(parts) != 2:
+        if len(parts) != 5:
             raise Invalid(
                 u"Your Mailinglijst API key is not valid. Please go " +
                 u"to mailinglijst.com and check your API key.")

@@ -42,18 +42,18 @@ class NewsletterSubscriberForm(extensible.ExtensibleForm, form.Form):
 
     def updateFields(self):
         super(NewsletterSubscriberForm, self).updateFields()
-        self.fields['interest_groups'].widgetFactory = \
-            CheckBoxFieldWidget
-        self.fields['email_type'].widgetFactory = \
-            RadioFieldWidget
+        
+        """self.fields['email_type'].widgetFactory = \
+            RadioFieldWidget"""
 
     def updateWidgets(self):
         super(NewsletterSubscriberForm, self).updateWidgets()
         # Show/hide mail format option widget
         registry = getUtility(IRegistry)
         mailinglijst_settings = registry.forInterface(IMailinglijstSettings)
-        if not mailinglijst_settings.email_type_is_optional:
-            self.widgets['email_type'].mode = HIDDEN_MODE
+        
+        """if not mailinglijst_settings.email_type_is_optional:
+            self.widgets['email_type'].mode = HIDDEN_MODE"""
         # Retrieve the list id either from the request/form or fall back to
         # the default_list setting.
         if 'list_id' in self.context.REQUEST:
@@ -65,17 +65,7 @@ class NewsletterSubscriberForm(extensible.ExtensibleForm, form.Form):
 
         self.widgets['list_id'].mode = HIDDEN_MODE
         self.widgets['list_id'].value = list_id
-        
-        # Show/hide interest_groups widget
-        """mailinglijst = getUtility(IMailinglijstLocator)
-        groups = mailinglijst.groups(list_id=list_id)
-        if not groups:
-            self.widgets['interest_groups'].mode = HIDDEN_MODE
-        if 'preselect_group' in self.context.REQUEST:
-            for group_index in self.request['preselect_group']:
-                group_index = int(group_index)
-                self.widgets['interest_groups']\
-                    .items[group_index]['checked'] = True"""
+
 
     @button.buttonAndHandler(_(u"subscribe_to_newsletter_button",
                                default=u"Subscribe"),
@@ -84,6 +74,7 @@ class NewsletterSubscriberForm(extensible.ExtensibleForm, form.Form):
         data, errors = self.extractData()
         if 'email' not in data:
             return
+        
         mailinglijst = getUtility(IMailinglijstLocator)
         # Retrieve list_id either from a hidden field in the form or fetch
         # the first list from mailinglijst.
@@ -92,29 +83,18 @@ class NewsletterSubscriberForm(extensible.ExtensibleForm, form.Form):
         else:
             list_id = mailinglijst.default_list_id()
 
-        """# Groupings
-        interests = {}
-        if 'interest_groups' in data and data['interest_groups'] is not None:
-            interest_grouping = mailinglijst.groups(list_id=list_id)
-            if interest_grouping and data['interest_groups']:
-                # Create dictionary with as keys the interest groups, and as
-                # values always True.
-                interests = dict.fromkeys(data['interest_groups'], True)"""
-
         # Use email_type if one is provided by the form, if not choose the
         # default email type from the control panel settings.
-        if 'email_type' in data:
+        """if 'email_type' in data:
             email_type = data['email_type']
         else:
-            email_type = 'HTML'
+            email_type = 'HTML'"""
         
         # Subscribe to Mailinglijst list
         try:
             mailinglijst.subscribe(
                 list_id=list_id,
-                email_address=data['email'],
-                email_type=email_type,
-                interests=interests
+                email_address=data['email']
             )
         except MailinglijstException as error:
             return self.handle_error(error, data)
@@ -133,12 +113,11 @@ class NewsletterSubscriberForm(extensible.ExtensibleForm, form.Form):
 
         IStatusMessage(self.context.REQUEST).addStatusMessage(
             message, type="info")
+
         portal = getSite()
         self.request.response.redirect(portal.absolute_url())
 
     def handle_error(self, error, data):
-        # Current api v3 documentation only lists errors in the 400 and 500
-        # range.  The 400 code can mean a lot of things...
         if error.code == 400:
             error_msg = _(
                 u"mailinglijst_error_msg_already_subscribed",

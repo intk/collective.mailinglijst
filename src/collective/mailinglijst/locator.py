@@ -25,6 +25,7 @@ _marker = object()
 logger = logging.getLogger('collective.mailinglijst')
 
 LIST_ID = '3679'
+LIST_NAME = "Mondriaanhuis"
 
 class MailinglijstLocator(object):
     """Utility for Mailinglijst API calls.
@@ -32,7 +33,6 @@ class MailinglijstLocator(object):
 
     implements(IMailinglijstLocator)
     key_account = "collective.mailinglijst.cache.account"
-    key_groups = "collective.mailinglijst.cache.groups"
     key_lists = "collective.mailinglijst.cache.lists"
 
     def __init__(self, settings={}):
@@ -49,6 +49,7 @@ class MailinglijstLocator(object):
             self.registry = getUtility(IRegistry)
         if self.settings is None:
             self.settings = self.registry.forInterface(IMailinglijstSettings)
+
         self.apikey = self.settings.api_key
         if not self.apikey:
             return
@@ -56,8 +57,8 @@ class MailinglijstLocator(object):
         if not len(parts) > 1:
             # bad api key, allow to fix
             return
-        self.shard = parts[1]
-        self.api_root = "https://" + self.shard + ".api.mailinglijst.com/3.0/"
+
+        self.api_root = "https://mailinglijst.nl/api"
 
     def _serialize_payload(self, payload):
         params = self.params.copy()
@@ -72,32 +73,35 @@ class MailinglijstLocator(object):
     def _deserialize_response(self, text):
         """ Attempt to deserialize a JSON response from the server."""
         try:
-            deserialized = xml_deserialize(text)
+            deserialized = xml_deserialize(text.encode('utf-8'))
         except ValueError:
             raise DeserializationError(text)
         
         #self._fail_if_mailinglijst_exc(deserialized)
         return deserialized
 
-    def api_request(self, endpoint='', request_type='get', **kwargs):
+    def api_request(self, request_type='get', **kwargs):
         """ construct the request and do a get/post.
         """
         if not self.api_root:
             return []
-        headers = {'content-type': 'application/json'}
-        url = urlparse.urljoin(self.api_root, endpoint)
+
+        headers = {}
+        url = urlparse.urljoin(self.api_root, '')
+
         # we provide a json structure with the parameters.
-        payload = json.dumps(kwargs)
+        payload = kwargs
         if request_type.lower() == 'post':
             request_method = requests.post
         else:
             request_method = requests.get
         try:
-            resp = request_method(url, auth=(
-                'apikey', self.apikey), data=payload, headers=headers)
+            resp = request_method(url, params=payload)
         except Exception, e:
             raise PostRequestError(e)
+
         decoded = self._deserialize_response(resp.text)
+
         return decoded
 
     def default_list_id(self):
@@ -112,30 +116,54 @@ class MailinglijstLocator(object):
         return LIST_ID
         
 
-    def subscribe(self, list_id, email_address, email_type, **kwargs):
+    def subscribe(self, list_id, email_address, **kwargs):
         """ API call to subscribe a member to a list. """
         self.initialize()
-        opt_in_status = 'subscribed'
+        
+        opt_in_status = '1'
         if self.settings.double_optin:
-            opt_in_status = 'pending'
-        if not email_type:
-            email_type = self.settings.email_type
-        endpoint = 'lists/' + list_id + '/members'
+            opt_in_status = '0'
+
+        """if not email_type:
+            email_type = self.settings.email_type"""
+        
+        endpoint = ''
+        
         try:
-            response = self.api_request(endpoint, request_type='post',
-                                        status=opt_in_status,
-                                        email_address=email_address,
-                                        email_type=email_type,
+            response = self.api_request(request_type='get',
+                                        action="SUBSCRIBE",
+                                        optin=opt_in_status,
+                                        e=email_address,
+                                        l=list_id,
+                                        key=self.apikey,
                                         **kwargs)
         except MailinglijstException:
             raise
         except Exception, e:
             raise PostRequestError(e)
+
+        api_resp = response['api']
+        
+        try:
+            description = self.find_param('description', api_resp)
+        except:
+            description = ""
+
+        if 'already member' in description:
+            raise MailinglijstException(400, 'Already member of the list.', '')
+        
         logger.info("Subscribed %s to list with id: %s." %
                     (email_address, list_id))
         logger.debug("Subscribed %s to list with id: %s.\n\n %s" %
                      (email_address, list_id, response))
+        
         return response
+
+    def find_param(self, param_name, list_params):
+        for param in list_params:
+            if param_name in param:
+                return param[param_name][0]
+        return ''
 
     def account(self):
         """ Get account details. This is cached as well """
@@ -149,7 +177,7 @@ class MailinglijstLocator(object):
         """ Actual API call to mailinglijsts api root.
         """
         try:
-            return self.api_request()
+            return self.api_request(action="GET", key=self.apikey)
         except MailinglijstException:
             logger.exception("Exception getting account details.")
             return None
@@ -181,7 +209,7 @@ class MailinglijstLocator(object):
             return []
         if 'lists' in response:
             return response['lists']"""
-        return [{'name': LIST_ID, 'id': LIST_ID}]
+        return [{'name': LIST_NAME, 'id': LIST_ID}]
 
     def groups(self, list_id=None):
         """ API call for interest-categories. This is also cached. """

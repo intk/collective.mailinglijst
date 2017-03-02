@@ -40,7 +40,7 @@
 
   <!-- Newsletter -->
   <browser:page
-    name="newsletter"
+    name="mailinglijst_newsletter"
     for="*"
     class=".newsletter.NewsletterView"
     permission="zope2.View"

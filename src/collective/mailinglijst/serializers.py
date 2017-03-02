@@ -17,7 +17,7 @@ class XML2Py():
 
     def __init__( self ):
 
-        self._parser = parser = etree.XMLParser( remove_blank_text=True )
+        self._parser = parser = etree.XMLParser( remove_blank_text=True, encoding='utf-8' )
         self._root = None  # root of etree structure
         self.data = None   # where we store the processed Python structure
 
@@ -77,7 +77,7 @@ class XML2Py():
 
                 else:
                     # these children are repeated tag entities ( eg, 'format' )
-                    childContainer.append( childDict["children"] )
+                    childContainer.append( { childDict["tag"] : childDict["children"] } )
 
         return { "tag":element.tag, "children": childContainer }
 
