@@ -1,0 +1,41 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:upgradeStep
+      source="*"
+      destination="1100"
+      title="Update collective.mailinglijst setting registry"
+      description=""
+      profile="collective.mailinglijst:default"
+      handler=".upgrades.update_registry"
+      />
+
+  <genericsetup:upgradeStep
+      source="1100"
+      destination="1200"
+      title="Install collective.mailinglijst stylesheet."
+      description=""
+      profile="collective.mailinglijst:default"
+      handler=".upgrades.install_mailinglijst_stylesheet"
+      />
+
+  <genericsetup:upgradeStep
+      source="1200"
+      destination="1400"
+      title="Install collective.mailinglijst cache."
+      description=""
+      profile="collective.mailinglijst:default"
+      handler=".upgrades.install_mailinglijst_cache"
+      />
+
+  <genericsetup:upgradeStep
+      source="1400"
+      destination="2000"
+      title="Re-install collective.mailinglijst to load new src folder."
+      description=""
+      profile="collective.mailinglijst:default"
+      handler=".upgrades.reload_profile"
+      />
+
+</configure>

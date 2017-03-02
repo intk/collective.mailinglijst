@@ -1,0 +1,7 @@
+#newsletter-subscriber-form #formfield-form-widgets-interest_groups span.option {
+    display: block;
+}
+
+.portletMailinglijst .field input[type="text"] {
+    width: 100%;
+}

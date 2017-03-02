@@ -1,0 +1,40 @@
+from Products.CMFCore.utils import getToolByName
+
+from zope.component import getUtility
+
+from plone.app.upgrade.utils import loadMigrationProfile
+from plone.registry.interfaces import IRegistry
+
+from collective.mailinglijst.interfaces import IMailinglijstSettings
+PROFILE_ID = "profile-collective.mailinglijst:default"
+
+
+def update_registry(context):
+    registry = getUtility(IRegistry)
+    registry.registerInterface(IMailinglijstSettings)
+
+
+def install_mailinglijst_stylesheet(context):
+    csstool = getToolByName(context, 'portal_css', None)
+    stylesheet_id = \
+        '++resource++collective.mailinglijst.stylesheets/mailinglijst.css'
+    if stylesheet_id not in csstool.getResourceIds():
+        csstool.manage_addStylesheet(
+            id=stylesheet_id,
+            rel='stylesheet',
+            rendering='link',
+            enabled=True,
+            cookable=True,
+        )
+
+
+def install_mailinglijst_cache(context):
+    setup = getToolByName(context, 'portal_setup')
+    setup.runImportStepFromProfile(PROFILE_ID, 'plone.app.registry')
+
+
+def reload_profile(context):
+    loadMigrationProfile(
+        context,
+        'profile-collective.mailinglijst:default'
+    )

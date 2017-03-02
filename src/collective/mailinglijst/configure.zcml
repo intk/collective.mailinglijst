@@ -1,0 +1,41 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.mailinglijst">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Mailinglijst"
+      directory="profiles/default"
+      description="Mailinglijst integration for Plone."
+      i18n:attributes="title; description"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <include package=".browser" />
+
+  <include file="upgrades.zcml" />
+
+  <i18n:registerTranslations directory="locales" />
+
+  <!-- Mailinglijst Locator -->
+  <utility
+    provides="collective.mailinglijst.interfaces.IMailinglijstLocator"
+    factory=".locator.MailinglijstLocator" />
+
+  <!-- Vocabularies -->
+  <utility component=".vocabularies.available_lists"
+           name="collective.mailinglijst.vocabularies.AvailableLists"
+           provides="zope.schema.interfaces.IVocabularyFactory" />
+
+  <utility component=".vocabularies.interest_groups"
+           name="collective.mailinglijst.vocabularies.InterestGroups"
+           provides="zope.schema.interfaces.IVocabularyFactory" />
+
+  <utility component=".vocabularies.email_type"
+           name="collective.mailinglijst.vocabularies.EmailType"
+           provides="zope.schema.interfaces.IVocabularyFactory" />
+
+</configure>

@@ -1,0 +1,6 @@
+<layers>
+  <layer
+    name="collective.mailinglijst"
+    interface="collective.mailinglijst.interfaces.ICollectiveMailinglijst"
+    />
+</layers>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<registry>
+ <records interface="collective.mailinglijst.interfaces.IMailinglijstSettings" />
+     <record name="collective.mailinglijst.cache.lists">
+        <field type="plone.registry.field.Tuple">
+            <title>Mailinglijst Lists</title>
+        </field>
+    </record>
+    <record name="collective.mailinglijst.cache.groups">
+        <field type="plone.registry.field.Dict">
+            <title>Mailinglijst Groups</title>
+        </field>
+    </record>
+    <record name="collective.mailinglijst.cache.account">
+        <field type="plone.registry.field.Dict">
+            <title>Mailinglijst account details</title>
+        </field>
+    </record>
+</registry>

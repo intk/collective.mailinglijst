@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<portlets>
+
+  <portlet
+    addview="portlet.Mailinglijst"
+    title="Mailinglijst Portlet"
+    description="Description of My Portlet."
+    />
+
+</portlets>

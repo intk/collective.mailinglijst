@@ -1,0 +1,377 @@
+# Sjoerd van Elferen <sjoerd@fourdigits.nl>, 2013
+# Maurits van Rees <m.van.rees@zestsoftware.nl>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: collective.mailinglijst\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"PO-Revision-Date: 2015-04-28 14:42+0200\n"
+"Last-Translator: Maurits van Rees <m.van.rees@zestsoftware.nl>\n"
+"Language-Team: Plone Nederland <plone-plone-nl@lists.plone.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: nl\n"
+"Language-Name: Dutch\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.mailinglijst\n"
+"Language: nl\n"
+
+#: collective/mailinglijst/browser/portlet.py:90
+msgid "Add Mailinglijst Portlet"
+msgstr "Mailinglijst Portlet toevoegen"
+
+#: collective/mailinglijst/browser/controlpanel.pt:87
+msgid "Address 1:"
+msgstr "Adres 1:"
+
+#: collective/mailinglijst/browser/controlpanel.pt:91
+msgid "Address 2:"
+msgstr "Adres 2:"
+
+#: collective/mailinglijst/browser/portlet.py:37
+msgid "Available lists"
+msgstr "Beschikbare Listen"
+
+#: collective/mailinglijst/browser/controlpanel.pt:103
+msgid "City:"
+msgstr "Woonplaats:"
+
+#: collective/mailinglijst/browser/controlpanel.pt:144
+msgid "Cleaned cound"
+msgstr "Opgeschoond aantal"
+
+#: collective/mailinglijst/browser/controlpanel.pt:147
+msgid "Cleaned count since send"
+msgstr "Opgeschoond aantal sinds laatste verzending"
+
+#: collective/mailinglijst/browser/controlpanel.pt:71
+msgid "Company:"
+msgstr "Bedrijf:"
+
+#: collective/mailinglijst/browser/z3cformhelpers.py:21
+msgid "Configure portlet"
+msgstr "Portlet configureren"
+
+#: collective/mailinglijst/browser/controlpanel.pt:107
+msgid "Country:"
+msgstr "Land:"
+
+#: collective/mailinglijst/browser/controlpanel.pt:145
+msgid "Date created"
+msgstr "Datum aangemaakt"
+
+#: collective/mailinglijst/browser/controlpanel.pt:142
+msgid "Default from email"
+msgstr "Standaard 'van' e-mailadres"
+
+#: collective/mailinglijst/browser/controlpanel.pt:139
+msgid "Default from name"
+msgstr "Standaard 'van' naam"
+
+#: collective/mailinglijst/browser/controlpanel.pt:138
+msgid "Default language"
+msgstr "Standaard taal"
+
+#: collective/mailinglijst/browser/controlpanel.pt:141
+msgid "Default subject"
+msgstr "Standaard onderwerp"
+
+#: collective/mailinglijst/interfaces.py:15
+msgid "E-Mail"
+msgstr "E-mail"
+
+#: collective/mailinglijst/browser/controlpanel.pt:55
+msgid "E-mails left:"
+msgstr "E-mails over:"
+
+#: collective/mailinglijst/browser/portlet.py:104
+msgid "Edit Mailinglijst Portlet"
+msgstr "Mailinglijst Portlet wijzigen"
+
+#: collective/mailinglijst/interfaces.py:46
+msgid "Email address"
+msgstr "E-mailadres"
+
+#: collective/mailinglijst/browser/controlpanel.pt:136
+msgid "Email type option"
+msgstr "E-mail type optie"
+
+#: collective/mailinglijst/browser/controlpanel.pt:83
+msgid "Email:"
+msgstr "E-mail:"
+
+#: collective/mailinglijst/browser/controlpanel.pt:119
+msgid "Fax:"
+msgstr "Fax:"
+
+#: collective/mailinglijst/browser/controlpanel.pt:75
+msgid "First name:"
+msgstr "Voornaam:"
+
+#: collective/mailinglijst/browser/controlpanel.pt:132
+msgid "ID"
+msgstr "ID"
+
+#: collective/mailinglijst/interfaces.py:55
+msgid "Interest groups"
+msgstr "Interesse groepen"
+
+#: collective/mailinglijst/interfaces.py:30
+msgid "Invalid email address"
+msgstr "Ongeldig E-Mail adres"
+
+#: collective/mailinglijst/browser/controlpanel.pt:45
+msgid "Key"
+msgstr "Sleutel"
+
+#: collective/mailinglijst/browser/controlpanel.pt:63
+msgid "Last login:"
+msgstr "Laatste login:"
+
+#: collective/mailinglijst/browser/controlpanel.pt:79
+msgid "Last name:"
+msgstr "Achternaam:"
+
+#: collective/mailinglijst/interfaces.py:74
+msgid "List ID"
+msgstr "Lijst ID"
+
+#: collective/mailinglijst/browser/controlpanel.pt:146
+msgid "List rating"
+msgstr "Lijst waardering"
+
+#: collective/mailinglijst/interfaces.py:67
+msgid "Mail format"
+msgstr "E-mail formaat"
+
+#: collective/mailinglijst/browser/portlet.py:56
+#: collective/mailinglijst/profiles/default/controlpanel.xml
+msgid "Mailinglijst"
+msgstr "Mailinglijst"
+
+#: collective/mailinglijst/interfaces.py:117
+msgid "Mailinglijst API Key"
+msgstr "Mailinglijst API Key"
+
+#: collective/mailinglijst/browser/controlpanel.pt:40
+msgid "Mailinglijst Account"
+msgstr "Mailinglijst account"
+
+#: collective/mailinglijst/browser/controlpanel.pt:127
+msgid "Mailinglijst Lists"
+msgstr "Mailinglijst lijsten"
+
+#: collective/mailinglijst/browser/controlpanel.py:19
+msgid "Mailinglijst settings"
+msgstr "Mailinglijst instellingen"
+
+#: collective/mailinglijst/browser/controlpanel.pt:135
+msgid "Member count"
+msgstr "Ledenaantal"
+
+#: collective/mailinglijst/browser/controlpanel.pt:137
+msgid "Member count since send"
+msgstr "Ledenaantal sinds verzending"
+
+#: collective/mailinglijst/browser/controlpanel.pt:59
+msgid "Member since:"
+msgstr "Lid sinds:"
+
+#: collective/mailinglijst/browser/z3cformhelpers.py:65
+msgid "Modify portlet"
+msgstr "Portlet wijzigen"
+
+#: collective/mailinglijst/browser/controlpanel.pt:134
+msgid "Name"
+msgstr "Naam:"
+
+#: collective/mailinglijst/browser/controlpanel.pt:115
+msgid "Phone:"
+msgstr "Telefoon:"
+
+#: collective/mailinglijst/browser/controlpanel.pt:67
+msgid "Plan type:"
+msgstr "Plan type:"
+
+#: collective/mailinglijst/browser/portlet.py:38
+msgid "Select available lists to subscribe to."
+msgstr "Selecteer beschikbare lijst om in te schrijven"
+
+#: collective/mailinglijst/browser/controlpanel.pt:18
+msgid "Site Setup"
+msgstr "Website instellingen"
+
+#: collective/mailinglijst/browser/controlpanel.pt:32
+msgid "Standard"
+msgstr "Standaard"
+
+#: collective/mailinglijst/browser/controlpanel.pt:99
+msgid "State:"
+msgstr "Status:"
+
+#: collective/mailinglijst/browser/newsletter.py:38
+#: collective/mailinglijst/browser/portlet.py:72
+msgid "Subscribe to newsletter"
+msgstr "Inschrijven op nieuwsbrief"
+
+#: collective/mailinglijst/interfaces.py:14
+msgid "Subscriber list"
+msgstr "Lijst van inschrijvingen"
+
+#: collective/mailinglijst/browser/portlet.py:91
+msgid "This portlet displays a subscription form for a Mailinglijst newsletter."
+msgstr "Dit portlet laat een inschrijflijst formulier zien voor Mailinglijst nieuwsbrieven"
+
+#: collective/mailinglijst/browser/portlet.py:33
+msgid "Title"
+msgstr "Titel"
+
+#: collective/mailinglijst/browser/portlet.py:34
+msgid "Title of the portlet"
+msgstr "Portlet titel"
+
+#: collective/mailinglijst/browser/controlpanel.pt:111
+msgid "URL:"
+msgstr "URL:"
+
+#: collective/mailinglijst/browser/controlpanel.pt:143
+msgid "Unsubscribed count"
+msgstr "Aantal uitgeschreven"
+
+#: collective/mailinglijst/browser/controlpanel.pt:140
+msgid "Unsubscribed count since send"
+msgstr "Aantal uitgeschreven sinds verzenden"
+
+#: collective/mailinglijst/browser/controlpanel.pt:51
+msgid "Username:"
+msgstr "Gebruikersnaam:"
+
+#: collective/mailinglijst/browser/controlpanel.pt:46
+msgid "Value"
+msgstr "Waarde"
+
+#: collective/mailinglijst/browser/newsletter.py:163
+msgid "We have to confirm your email address. In order to finish the newsletter subscription, click on the link inside the email we just send you."
+msgstr "We moeten uw email adres bevestigen om de nieuwsbrief inschrijving af te ronden. Klik op de link in de email die we u zojuist hebben verstuurd."
+
+#: collective/mailinglijst/browser/controlpanel.pt:133
+msgid "Web ID"
+msgstr "Web ID"
+
+#: collective/mailinglijst/browser/controlpanel.pt:95
+msgid "Zip:"
+msgstr "Postcode:"
+
+#: collective/mailinglijst/interfaces.py:152
+msgid "default_list"
+msgstr "Standaardlijst"
+
+#: collective/mailinglijst/interfaces.py:162
+msgid "double_optin"
+msgstr "dubbele opt-in"
+
+#. Default: "Let users choose their email type preference in the newsletter subscription form."
+#: collective/mailinglijst/interfaces.py:130
+msgid "email_type"
+msgstr "Laat gebruikers hun email type voorkeur instellen in het nieuwsbrief inschrijf formulier."
+
+#: collective/mailinglijst/interfaces.py:141
+msgid "email_type_is_optional"
+msgstr "email_type_is_optional"
+
+#. Default: "Enter in your Mailinglijst key here (.e.g. '8b785dcabe4b5aa24ef84201ea7dcded-us4'). Log into mailinglijst.com, go to account -> extras -> API Keys & Authorized Apps and copy the API Key to this field."
+#: collective/mailinglijst/interfaces.py:118
+msgid "help_api_key"
+msgstr "Voer hier uw Mailinglijst API-Key (e.g. '8b785dcabe4b5aa24ef84201ea7dcded-us4') in. Log in op mailinglijst.com, ga naar account -> extras -> API Keys & Authorized Apps en kopier de API Key naar dit veld."
+
+#. Default: "Default list which is used in the @@newsletter view if no list_id param is provided."
+#: collective/mailinglijst/interfaces.py:153
+msgid "help_default_list"
+msgstr "Standaard lijst die gebruikt wordt in de @@newsletter view als geen list_id parameter wordt gegeven."
+
+#. Default: "Flag to control whether a double opt-in confirmation message is sent, defaults to true. Abusing this may cause your account to be suspended."
+#: collective/mailinglijst/interfaces.py:163
+msgid "help_double_optin"
+msgstr "Zet aan om te controleren of een dubbele opt-in bevestiging is verstuurd, standaard staat dit aan. Misbruik hiervan kan uw account suspenden"
+
+#. Default: "Please enter your email address."
+#: collective/mailinglijst/interfaces.py:47
+msgid "help_email"
+msgstr "Voer hier a.u.b. uw e-mailadres in."
+
+#. Default: "Email type preference for the email (html, text, or mobile defaults to html)"
+#: collective/mailinglijst/interfaces.py:131
+msgid "help_email_type"
+msgstr "E-mail type voorkeuren voor de e-mail (html, text, of mobiel. Standaard is html)"
+
+#. Default: "Let users choose their email type preference in the newsletter subscription form."
+#: collective/mailinglijst/interfaces.py:142
+msgid "help_email_type_is_optional"
+msgstr "Laat gebruikers hun e-mail type voorkeur kiezen in het formulier voor inschrijven voor de nieuwsbrief."
+
+#: collective/mailinglijst/interfaces.py:56
+msgid "help_interest_groups"
+msgstr ""
+
+#. Default: "Flag to determine whether we replace the interest groups with the groups provided or we add the providedgroups to the member's interest groups (optional, defaults to true)"
+#: collective/mailinglijst/interfaces.py:186
+msgid "help_replace_interests"
+msgstr "Zet aan om te bepalen of we de interesse groepen vervangen met de groepen aangeleverd of we de aangeleverde groepen toevoegen aan het lid zijn interesse groepen. (optioneel, standaard true)"
+
+#. Default: "If your double_optin is false and this is true, we will send your lists Welcome Email if this subscribe succeeds - this will *not* fire if we end up updating an existing subscriber. If double_optin is true, this has no effect. defaults to false."
+#: collective/mailinglijst/interfaces.py:199
+msgid "help_send_welcome"
+msgstr "Als double_optin uitstaat en deze aanstaat, zullen we de welkom email van de lijst versturen als de inschrijving succesvol is. Dit wordt niet gedaan als we een bestaande gebruiker updaten. Als double_optin aanstaat heeft dit geen effect. Standaard false"
+
+#. Default: "Flag to control whether existing subscribers should be updated instead of throwing an error, defaults to false"
+#: collective/mailinglijst/interfaces.py:175
+msgid "help_update_existing"
+msgstr "Zet aan om bestaande gebruikers te updaten in plaats van een foutmelding te geven. Standaard false"
+
+#. Default: "Cancel"
+#: collective/mailinglijst/browser/z3cformhelpers.py:50
+msgid "label_cancel"
+msgstr "Annuleren"
+
+#. Default: "Save"
+#: collective/mailinglijst/browser/z3cformhelpers.py:39
+msgid "label_save"
+msgstr "Opslaan"
+
+#. Default: "Could not subscribe to newsletter. Please contact the site administrator: '${error}'"
+#: collective/mailinglijst/browser/newsletter.py:149
+msgid "mailinglijst_error_msg"
+msgstr "Aanmelden op nieuwsbrief mislukt. Neem a.u.b. contact op met de website beheerder: '${error}'"
+
+#. Default: "Could not subscribe to newsletter. The email '${email}' is already subscribed."
+#: collective/mailinglijst/browser/newsletter.py:121
+msgid "mailinglijst_error_msg_already_subscribed"
+msgstr "Het email adres '${email}' is al aangemeld. Controleer uw inbox en klik op de link om te bevestigen."
+
+#. Default: "Could not subscribe to newsletter. The email '${email}' has been banned."
+#: collective/mailinglijst/browser/newsletter.py:135
+msgid "mailinglijst_error_msg_banned"
+msgstr "Aanmelden op nieuwsbrief mislukt. Het e-mail adres '${email}' is verbannen."
+
+#. Default: "Your account has not been saved yet or is not valid."
+#: collective/mailinglijst/browser/controlpanel.pt:33
+msgid "msg_mailinglijst_no_account"
+msgstr "Uw account is nog niet opgeslagen of is niet geldig."
+
+#: collective/mailinglijst/interfaces.py:185
+msgid "replace_interests"
+msgstr "Groepen vervangen"
+
+#: collective/mailinglijst/interfaces.py:198
+msgid "send_welcome"
+msgstr "Welkomstbericht versturen"
+
+#. Default: "Subscribe"
+#: collective/mailinglijst/browser/newsletter.py:79
+msgid "subscribe_to_newsletter_button"
+msgstr "Inschrijven"
+
+#: collective/mailinglijst/interfaces.py:174
+msgid "update_existing"
+msgstr "Bestaande leden bijwerken"
